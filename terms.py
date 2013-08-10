@@ -5,7 +5,7 @@
 import sys, subprocess
 
 def read():
-    fname = raw_input("Name the file you want to read : ")
+    fname = raw_input("Name the file you want to read ( No need to add .ter extension ): ")
     with open(str(fname)+'.ter', 'rU') as typescript:
         print typescript.read()
 
@@ -19,7 +19,7 @@ def main ():
     if len(sys.argv) == 2:
         if sys.argv[1] == '--rec':
             print "Record mode started"
-            fname = raw_input("Name this file : ")
+            fname = raw_input("Name this file ( I will add the .ter extension to it ): ")
             subprocess.call("script -q", shell=True)
             subprocess.call('mv typescript ' + str(fname) + '.ter', shell=True)
 
@@ -28,3 +28,5 @@ def main ():
 
 if __name__ == '__main__':
     main()
+
+
